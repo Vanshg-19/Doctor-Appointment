@@ -37,7 +37,7 @@ const Navbar = () => {
             <div className='flex items-center cursor-pointer group relative gap-2' onClick={()=>setDropDown(prev => !prev)}>
                 <img className='w-8 rounded-full' src={assets.profile_pic} alt="" />
                 <img className='w-2.5' src={assets.dropdown_icon} alt="" />
-                {dropDown&&<div className='absolute top-0 right-0 pt-14 text-base font-medium text-gray-600 z-20 '>
+                {dropDown&&<div className='absolute top-0 right-0 pt-14 text-base font-medium text-gray-600 z-20'>
                     <div className='min-w-48 bg-stone-100 rounded flex flex-col gap-4 p-4'>
                         <p onClick={()=>navigate('my-profile')} className='hover:text-black cursor-pointer'>My Profile</p>
                         <p onClick={()=>navigate('my-appointments')} className='hover:text-black cursor-pointer'>My Appointments</p>
@@ -45,7 +45,7 @@ const Navbar = () => {
                     </div>
                 </div>}
             </div>
-            :<button onClick={()=>navigate('/login')} className='bg-blue-700 text-white px-8 py-3 rounded-full font-light hidden md:block'>Create Account</button>
+            :<button onClick={()=>navigate('/login')} className='bg-blue-700 text-white px-2 ml-3  h-7 rounded-full font-light md:px-7 md:py-3 md:h-full'>{window.innerWidth<768?('Create'):('Create Account')}</button>
         }
         <img onClick={()=>setShowMenu(true)} className='w-6 md:hidden' src={assets.menu_icon} alt="" />
         {/* ---------Mobile Menu------------- */}
